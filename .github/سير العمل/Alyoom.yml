@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?><manifest versionCode="170" versionName="4.0.41.8970" compileSdkVersion="31" compileSdkVersionCodename="12" installLocation="internalOnly" package="com.alyoom.invan" platformBuildVersionCode="31" platformBuildVersionName="12">
+  <uses-sdk minSdkVersion="21" targetSdkVersion="29"/>
+  <uses-permission name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission name="android.permission.BLUETOOTH_ADMIN"/>
+  <uses-permission name="android.permission.CAMERA"/>
+  <uses-permission name="android.permission.BLUETOOTH"/>
+  <uses-permission name="android.permission.INTERNET"/>
+  <uses-permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+  <uses-permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <uses-permission name="android.permission.USE_CREDENTIALS"/>
+  <uses-permission name="android.permission.GET_ACCOUNTS"/>
+  <uses-permission name="android.permission.READ_PROFILE"/>
+  <uses-permission name="android.permission.READ_CONTACTS"/>
+  <uses-permission name="android.permission.VIBRATE"/>
+  <uses-permission name="android.permission.WRITE_CONTACTS"/>
+  <uses-permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission name="android.permission.GET_TASKS"/>
+  <uses-permission name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission name="android.permission.CALL_PHONE"/>
+  <uses-permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <uses-permission name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+  <uses-permission name="android.permission.WAKE_LOCK"/>
+  <uses-feature glEsVersion="0x20000" required="true"/>
+  <uses-feature name="android.hardware.camera" required="true"/>
+  <uses-feature name="android.hardware.camera.front" required="true"/>
+  <uses-feature name="android.hardware.camera.autofocus" required="true"/>
+  <uses-feature name="android.hardware.camera.flash" required="true"/>
+  <uses-feature name="android.hardware.screen.landscape" required="true"/>
+  <uses-feature name="android.hardware.wifi" required="true"/>
+  <uses-permission name="com.google.android.c2dm.permission.RECEIVE"/>
+  <uses-permission name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+  <application theme="MyMaterialTheme" label="شركة اليوم " icon="res/mipmap-xhdpi-v4/sonic_logo_filled.png" name="com.incube.invan.InVanApplication" debuggable="true" allowBackup="true" largeHeap="true" supportsRtl="true" usesCleartextTraffic="true" appComponentFactory="androidx.core.app.CoreComponentFactory" requestLegacyExternalStorage="true">
+    <activity label="documentProof" name="com.incube.invan.ui.ProofDocument.DocumentProofActivity"/>
+    <activity name="com.incube.invan.merchandising.MaintenanceRequest.MaintenanceRequestHistoryListActivity"/>
+    <activity name="com.incube.invan.merchandising.MaintenanceRequest.MaintenanceRequestListActivity"/>
+    <activity name="com.incube.invan.merchandising.MaintenanceRequest.AddMaintenanceRequestActivity"/>
+    <uses-library name="org.apache.http.legacy" required="true"/>
+    <provider name="androidx.core.content.FileProvider" exported="false" authorities="com.alyoom.invan.fileprovider" grantUriPermissions="true">
+      <meta-data name="android.support.FILE_PROVIDER_PATHS" resource="file_paths"/>
+    </provider>
+    <activity name="com.incube.invan.merchandising.SurveyFilterDialog"/>
+    <activity name="com.incube.invan.globaldialogs.StoreKeeperLogInDialog"/>
+    <activity name="com.incube.invan.SalesOrders.SalesOrdersWithoutVisitActivity" screenOrientation="1"/>
+    <activity name="com.incube.invan.ui.dialogs.NewCustomerTemplateDialog"/>
+    <activity name="disabled_com.incube.invan.ui.VendingMachine.VendingMachineActivity" screenOrientation="1"/>
+    <activity name="com.incube.invan.ui.iCash.TopUpActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity name="com.incube.invan.ui.VMImageActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <receiver name="com.incube.invan.utils.AlarmReceiver"/>
+    <receiver name="com.incube.invan.utils.LoadRequestReceiver"/>
+    <receiver name="com.incube.invan.utils.StopCustomerServing"/>
+    <receiver name="com.incube.invan.utils.StartCheckLocationAlarmReceiver"/>
+    <service name="com.incube.invan.GoogleServices.MyFirebaseMessagingService">
+      <intent-filter>
+        <action name="com.google.firebase.MESSAGING_EVENT"/>
+      </intent-filter>
+    </service>
+    <service name="com.incube.invan.GoogleServices.MyFirebaseInstanceIDService">
+      <intent-filter>
+        <action name="com.google.firebase.INSTANCE_ID_EVENT"/>
+      </intent-filter>
+    </service>
+    <activity theme="MyMaterialTheme" label="لوحات العرض" name="com.incube.invan.ui.OnlineDashboards.OnlineDashboardsMenu" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="لوحات العرض" name="com.incube.invan.ui.OnlineDashboards.OnlineDashboardViewer" configChanges="0x480"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الدفعة" name="com.incube.invan.ui.Reprint.CollectionDetailsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تبادل صناديق النقد" name="com.incube.invan.ui.VendingMachine.CashBoxExchangeActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity theme="MyMaterialTheme" label="المجموعة" name="com.incube.invan.ui.Reprint.CollectionsListActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الفاتورة" name="com.incube.invan.ui.Reprint.ReprintTransactionDetailActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الطلبية" name="com.incube.invan.ui.Reprint.ReprintOrderDetailsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="الحزم" name="com.incube.invan.ui.Bundles.BundlesActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تحديث البيانات" name="com.incube.invan.ui.UpdateCheckActivity" screenOrientation="1"/>
+    <activity theme="DialogNoTitle" name="com.incube.invan.ui.SyncOptionsActivity" excludeFromRecents="true" screenOrientation="1" configChanges="0x4a0" parentActivityName="com.incube.invan.ui.BaseActivity"/>
+    <activity theme="MyMaterialTheme" label="طباعة الوثائق" name="com.incube.invan.ui.Reprint.ReprintActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="مواد مجانية" name="com.incube.invan.ui.FOC.FOCItemsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة الفواتير" name="com.incube.invan.ui.Reprint.ReprintTransactionsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة الطلبيات" name="com.incube.invan.ui.Reprint.ReprintOrdersActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة الاستبيانات" name="com.incube.invan.merchandising.SurveyListActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x2"/>
+    <activity label="شركة اليوم " name="com.incube.invan.MainActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="شركة اليوم " name="com.incube.invan.SplashScreen" screenOrientation="1" configChanges="0x4a0">
+      <intent-filter>
+        <action name="android.intent.action.MAIN"/>
+        <category name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity theme="MyMaterialTheme" label="الدخول" name="com.incube.invan.ui.LoginActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x10"/>
+    <activity theme="MyMaterialTheme" label="طلبيات المبيعات" name="com.incube.invan.ui.OrderActivity" launchMode="0" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x20"/>
+    <activity theme="MyMaterialTheme" label="طلبيات المبيعات" name="com.incube.invan.ui.Orders.NewOrderActivity" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity theme="MyMaterialTheme" label="مسار اليوم" name="com.incube.invan.kpi.RouteToday.RouteTodayPagesActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="المادة" name="com.incube.invan.ui.ItemActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="ارجاع" name="com.incube.invan.ui.Return.ReturnActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x20"/>
+    <activity name="com.incube.invan.ui.SettingsActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="العملاء" name="com.incube.invan.ui.CustomerActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x12"/>
+    <activity theme="MyMaterialTheme" label="العروض" name="com.incube.invan.ui.Promotion.PromotionActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="الأصناف المجانية" name="com.incube.invan.ui.FocActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="حافز مجاني" name="com.incube.invan.ui.FOC.FOCIncentiveItemsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="مواد العرض" name="com.incube.invan.ui.Promotion.PromotedItemActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="اختيار الحزم لمواد العروض" name="com.incube.invan.ui.Promotion.PromotionBatchesSelectionActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="معاينة الطلبية" name="com.incube.invan.ui.PreviewOrderActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="Theme.AppCompat.Dialog.Alert" label="سبب زيارة غير مجدية" name="com.incube.invan.ui.ReasonActivity" screenOrientation="1" configChanges="0x4a0">
+      <meta-data name="android.support.PARENT_ACTIVITY" value=".ui.CustomerActivity"/>
+    </activity>
+    <activity theme="MyMaterialTheme" label="مفتاح العملية" name="com.incube.invan.ui.EmployeeKeyActivity" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="صور نقاط البيع" name="com.incube.invan.merchandising.ViewImageDialog" screenOrientation="1" configChanges="0x4a0"/>
+    <activity theme="MyMaterialTheme" label="نقاط البيع" name="com.incube.invan.merchandising.PosDashBoard" screenOrientation="1" configChanges="0x4a0">
+      <meta-data name="android.support.PARENT_ACTIVITY" value="DashBoardMenuCustomerActivity"/>
+    </activity>
+    <activity theme="MyMaterialTheme" label="جرد المخزون" name="com.incube.invan.merchandising.StockCountingActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x2">
+      <meta-data name="android.support.PARENT_ACTIVITY" value="PosDashBoard"/>
+    </activity>
+    <activity theme="MyMaterialTheme" label="قائمة نقاط البيع" name="com.incube.invan.merchandising.POSListActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="قائمة نقاط البيع" name="com.incube.invan.merchandising.CategoriesCountingActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="قائمة نقاط البيع" name="com.incube.invan.merchandising.DisplayUnitMainMenu" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="شركة اليوم " name="com.incube.invan.payment.activities.InvoicesActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="شركة اليوم " name="com.incube.invan.payment.activities.AddPaymentBeforeInvoices" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity theme="MyMaterialTheme" label="شركة اليوم " name="com.incube.invan.payment.activities.InvoicesAfterPayActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الدفع" name="com.incube.invan.payment.activities.CreditNotePayment" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الدفع" name="com.incube.invan.payment.activities.PaymentsActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الدفع" name="com.incube.invan.payment.activities.DownPaymentsActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الدفع" name="com.incube.invan.payment.activities.Add_down_payment" screenOrientation="1" windowSoftInputMode="0x4"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الدفع" name="com.incube.invan.payment.activities.Add_payment" screenOrientation="1" windowSoftInputMode="0x14"/>
+    <activity theme="MyMaterialTheme" label="إرسال الطلبيات" name="com.incube.invan.ui.SyncOrdersActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="مزامنة البيانات" name="com.incube.invan.ui.SynchronizeDataActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة المجاني" name="com.incube.invan.ui.FOCMenuActivity" screenOrientation="1"/>
+    <activity label="القائمة الرئيسية" name="com.incube.invan.RootActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="بطاقة النقاط" name="com.incube.invan.kpi.ScoreCardActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء كمية المبيعات حسب القسم" name="com.incube.invan.kpi.volum.DivisionLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مستوى تاريخ الاستحقاق" name="com.incube.invan.kpi.Collection.CollectionDueDateLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مستوى العميل" name="com.incube.invan.kpi.Collection.CollectionCustomersLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مستوى الحركة" name="com.incube.invan.kpi.Collection.CollectionTransactionsLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="خلال اليوم" name="com.incube.invan.kpi.RoutePlan.RoutePlanActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء كمية المبيعات حسب الفئة" name="com.incube.invan.kpi.volum.CategorylevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="الأداء حسب المادة" name="com.incube.invan.kpi.volum.ItemlevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء كمية المبيعات حسب العميل" name="com.incube.invan.kpi.volum.CustomerLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء خليط المواد للقناة" name="com.incube.invan.kpi.mix.ChannelLevelActivity" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء خليط المواد للعميل" name="com.incube.invan.kpi.mix.CustomerMixLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء خليط المواد" name="com.incube.invan.kpi.mix.ItemMixLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء مواد الشهر حسب القسم" name="com.incube.invan.kpi.fom.FomDivisionLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء كمية مواد الشهر حسب الفئة" name="com.incube.invan.kpi.fom.FomCategorylevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء مواد الشهر حسب المادة" name="com.incube.invan.kpi.fom.FomItemlevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="أداء مواد الشهر حسب العميل" name="com.incube.invan.kpi.fom.FomCustomerLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="الإنتاجية" name="com.incube.invan.kpi.productivity.ProductivityActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مستوى تصنيف المنتج" name="com.incube.invan.kpi.productivity.CategoryProductLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مستوى العملاء" name="com.incube.invan.kpi.productivity.CustomersLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="العملاء المنتجون" name="com.incube.invan.kpi.productivity.ProductiveCustomersPerItemActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="كل العملاء المنتجون" name="com.incube.invan.kpi.productivity.AllProductiveCustomersOfItemActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="بيانات العميل" name="com.incube.invan.ui.GoldenMinuteActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="اخر التسليمات" name="com.incube.invan.ui.LastDeliveriesActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="اخر مواد تم تسليمها" name="com.incube.invan.ui.LastDeliveriesItemActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="ملخص" name="com.incube.invan.ui.SummaryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="ملخص" name="com.incube.invan.ui.Orders.OrderSummaryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="حالة التسليم" name="com.incube.invan.ui.EmployeeDeliveryStatusActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="حالة التسليم" name="com.incube.invan.ui.OrderDetailsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="القائمة الرئيسية" name="com.incube.invan.ui.MainMenuActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="قائمة المواد" name="com.incube.invan.ui.UpdateItemsImages" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="قائمة المواد" name="com.incube.invan.ui.DynamicPrinting" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="الموافقة على الطلبيات" name="com.incube.invan.ui.OrdersApprovalActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الموافقة على الطلبيات" name="com.incube.invan.ui.OrderApprovalDetailsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="الموافقة على الطلبيات" name="com.incube.invan.ui.SalesmanApprovalActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="مستوى مواد الشهر في القناة" name="com.incube.invan.kpi.fom.FomChannelLevelActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة العملاء" name="com.incube.invan.ui.CustomerMenuActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="عميل جديد" name="com.incube.invan.ui.NewCustomerActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="نقاط البيع" name="com.incube.invan.ui.POSMenuActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="استبيانات" name="com.incube.invan.merchandising.SurveyActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مزامنة البيانات" name="com.incube.invan.ui.SynchronizationMenuActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة التحصيلات" name="com.incube.invan.ui.CollectionList" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="الطلبات المرفوضة" name="com.incube.invan.ui.RejectedOrdersActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="عميل جديد" name="com.incube.invan.ui.NewCustomerRequest.NewCustomerRequestActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تفاصيل الطلبات المرفوضة" name="com.incube.invan.ui.RejectedOrdersDetailsActivity" screenOrientation="1"/>
+    <service label="GPSLoggerService" name="com.incube.invan.services.GPSLoggerService" permission="android.permission.ACCESS_FINE_LOCATION" enabled="true" exported="true"/>
+    <service name="com.incube.incubecore.MyLocationService" enabled="true" stopWithTask="true"/>
+    <activity theme="MyMaterialTheme" label="اختيار القسم" name="com.incube.invan.ui.DivisionSelectionActivity" screenOrientation="1" configChanges="0x4a0" parentActivityName="com.incube.invan.ui.BaseActivity"/>
+    <activity theme="Theme.AppCompat.Dialog.Alert" label="اختيار المخزن" name="com.incube.invan.ui.LoadingWhSelectionActivity" excludeFromRecents="true" screenOrientation="1" configChanges="0x4a0" parentActivityName="com.incube.invan.ui.BaseActivity"/>
+    <activity theme="MyMaterialTheme" label="اختيار طريقة البيع" name="com.incube.invan.ui.Sales.SalesModeSelection" screenOrientation="1" configChanges="0x4a0" parentActivityName="com.incube.invan.ui.BaseActivity"/>
+    <activity theme="Theme.Holo.Light.Dialog" label="اختيار طريقة البيع" name="com.incube.invan.ui.Sales.SalesTypeSelection" screenOrientation="1" configChanges="0x4a0" parentActivityName="com.incube.invan.ui.BaseActivity"/>
+    <activity theme="MyMaterialTheme" label="اختيار العلامة التجارية" name="com.incube.invan.ui.BrandSelection" screenOrientation="1" configChanges="0x4a0" parentActivityName="com.incube.invan.ui.BaseActivity"/>
+    <activity theme="Theme.Holo.Light.Dialog" label="اختيار طريقة البيع" name="com.incube.invan.ui.Sales.QuickSalesActivity" screenOrientation="1" configChanges="0x4a0" parentActivityName="com.incube.invan.ui.BaseActivity"/>
+    <activity theme="MyMaterialTheme" label="المهام" name="com.incube.invan.ui.TasksActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تنفيذ المهمة" name="com.incube.invan.ui.TaskExecutionActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="التقارير اليومية" name="com.incube.invan.ui.DailySummaryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="التقارير اليومية" name="com.incube.invan.ui.DynamicActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="ملخص الطلبيات" name="com.incube.invan.ui.OrdersDailySaummary" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="المبيعات" name="com.incube.invan.ui.Sales.SalesActivity" screenOrientation="1" windowSoftInputMode="0x20"/>
+    <activity theme="MyMaterialTheme" label="Loyality" name="com.incube.invan.ui.LoyaltyPromotion.PointsOptionsActivity" screenOrientation="1" windowSoftInputMode="0x20"/>
+    <activity theme="MyMaterialTheme" label="Loyality" name="com.incube.invan.ui.LoyaltyPromotion.SalesByPointsActivity" screenOrientation="1" windowSoftInputMode="0x20"/>
+    <activity theme="MyMaterialTheme" label="تبادل" name="com.incube.invan.ui.Exchange.ExchangeActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تبادل" name="com.incube.invan.ui.Exchange.ExchangeSummaryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="التسليم :" name="com.incube.invan.ui.Delivery.DeliveryListActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="التسليم :" name="com.incube.invan.ui.Delivery.DeliveryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="المبيعات" name="com.incube.invan.ui.Sales.SalesSummaryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="ملخص" name="com.incube.invan.ui.CommonUI.CommonSummaryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة العقود المجانية" name="com.incube.invan.ui.FOC.ContractedFocListActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="عقود مجانية" name="com.incube.invan.ui.FOC.ContractedFOCActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="بداية اليوم" name="com.incube.invan.ui.Routing.StartOfDay" screenOrientation="1"/>
+    <activity label="Main3Activity" name="com.incube.invan.ui.CommonUI.Main3Activity" screenOrientation="1"/>
+    <activity label="Main4Activity" name="com.incube.invan.ui.Sales.Main4Activity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="العلامة التجارية" name="com.incube.invan.kpi.SalesOverBrand.BrandLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="العملاء" name="com.incube.invan.kpi.SalesOverBrand.CustomerPerBrandLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مستوى حزم المواد" name="com.incube.invan.kpi.SalesOverPackGroup.PackGroupLevelActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="Customer Level-Sales On Pack Group On Customer" name="com.incube.invan.kpi.SalesOverPackGroup.CustomerPerPackGroupActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="مخزون المركبة" name="com.incube.invan.ui.Inventory.VanStockActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="حمولة المركبة" name="com.incube.invan.ui.Inventory.LoadOutActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="التحميل" name="com.incube.invan.ui.Inventory.LoadOffloadActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="طلبات التحميل" name="com.incube.invan.ui.Inventory.LoadRequestsListActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="المركبة" name="com.incube.invan.ui.Inventory.InventoryMainMenu" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="ضبط الحمولة" name="com.incube.invan.ui.Inventory.LoadInActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="المبيعات اليومية" name="com.incube.invan.ui.DailySummary.DailySalesActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="المرتجعات اليومية" name="com.incube.invan.ui.DailySummary.DailyReturnsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="معلومات العميل" name="com.incube.invan.ui.CustomerInfoActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="التحصيل اليومي" name="com.incube.invan.ui.DailySummary.DailyCollectionReceiptsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="التعليقات" name="com.incube.invan.ui.Comment.CustomerCommentsActivity" screenOrientation="1" windowSoftInputMode="0x20"/>
+    <activity theme="MyMaterialTheme" label="اعادة طباعة التبديل" name="com.incube.invan.ui.Reprint.ReprintExchangeDetailsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="طباعة الوثائق" name="com.incube.invan.ui.Inventory.ReprintInventoryActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="طباعة الوثائق" name="com.incube.invan.ui.Inventory.ReprintWhTransactionActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="طباعة الوثائق" name="com.incube.invan.ui.CommonUI.TransactionActivity" screenOrientation="1" windowSoftInputMode="0x20"/>
+    <activity theme="MyMaterialTheme" label="طباعة الوثائق" name="com.incube.invan.ui.Inventory.ReprintWhTransactionDetailActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="نهاية اليوم" name="com.incube.invan.ui.Routing.EndOfDay" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="مراجعة البيانات" name="com.incube.invan.ui.DataReview.DataReviewActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="جرد الأصناف الغير متوفرة" name="com.incube.invan.ui.OOSCounting.OOSCountingActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="جرد محتويات المنافسين" name="com.incube.invan.merchandising.POSCompetitorItemsCountingActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="رقم الصنف التسلسلي" name="com.incube.invan.ui.SerialsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="ملخص المسار" name="com.incube.invan.ui.DailySummary.RouteSummary" screenOrientation="1"/>
+    <activity label="Visit History Details" name="com.incube.invan.ui.VisitHistoryDetails" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تاريخ الزيارات" name="com.incube.invan.ui.VisitHistory" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="قائمة التعليقات" name="com.incube.invan.ui.CustomerComments" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="رقم الصنف التسلسلي" name="com.incube.invan.ui.InvalidSerialsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="عميل جديد" name="com.incube.invan.ui.NewCustomerTemplate.NewCustomerTemplateActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="تقارير نهاية اليوم" name="com.incube.invan.ui.Reprint.EODReportsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="رفض الطلبيه" name="com.incube.invan.ui.Delivery.RejectDeliveryOrderActivity" screenOrientation="1" windowSoftInputMode="0x10"/>
+    <activity theme="MyMaterialTheme" label="اعادة جدولة موعد التسليم" name="com.incube.invan.ui.Delivery.RescheduleDeliveryOrderActivity" screenOrientation="1" windowSoftInputMode="0x10"/>
+    <activity theme="MyMaterialTheme" label="الفواتير غير المحصّلة" name="com.incube.invan.payment.activities.PandingCashInvoices" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="شركة اليوم " name="com.incube.invan.ui.SuggestedFragmentContainerActivity" screenOrientation="1" windowSoftInputMode="0x2"/>
+    <activity theme="MyMaterialTheme" label="المادة" name="com.incube.invan.ui.CommonUI.ItemListActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="الخصومات" name="com.incube.invan.ui.DataReview.DataReviewDiscountsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="الأسعار" name="com.incube.invan.ui.DataReview.DataReviewPricesActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="العروض" name="com.incube.invan.ui.DataReview.DataReviewPromotionsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="عملاء اليوم" name="com.incube.invan.ui.DataReview.DataReviewTodayCustomersActivity" screenOrientation="1"/>
+    <activity label="طلب النقل" name="com.incube.invan.ui.Inventory.TransferInfoActivity" screenOrientation="1"/>
+    <activity label="طلب النقل" name="com.incube.invan.ui.Inventory.MidDayLoad.MidDayLoadActivity" screenOrientation="1"/>
+    <activity label="فحص المركبة" name="com.incube.invan.ui.VanInspection.VanInspectionActivity" screenOrientation="1"/>
+    <activity label="سعر الصرف" name="com.incube.invan.ui.ExchangeRateActivity" screenOrientation="1"/>
+    <activity label="المخزون الاساسي" name="com.incube.invan.ui.WarehouseStock.WarehouseStockActivity" screenOrientation="1"/>
+    <activity name="com.incube.invan.ui.LoyaltyPromotion.LoyaltyPromotionActivity" screenOrientation="1"/>
+    <activity label="طلبات التوصيل" name="com.incube.invan.ui.DeliveryOrders.DeliveryOrdersActivity" screenOrientation="1"/>
+    <activity label="الدردشات" name="com.incube.invan.ui.ChattingModule.ChattingActivity" screenOrientation="1"/>
+    <activity name="com.incube.invan.ui.ChattingModule.ConversationActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity name="com.incube.invan.ui.ReturnContract.ContractsCollectionActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity label="تاريخ الزيارات" name="com.incube.invan.ui.CustomerVisits.CustomerVisitsActivity" screenOrientation="1"/>
+    <activity theme="DialogNoTitle" name="com.incube.invan.globaldialogs.NoProductiveReasonWithLocationCheck" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="طلب تبديل" name="com.incube.invan.ui.ExchangeRequest.ExchangeRequestListActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="طلب تبديل" name="com.incube.invan.ui.ExchangeRequest.ExchangeRequestActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="طلب تبديل" name="com.incube.invan.ui.ExchangeRequest.ExchangeRequestDetailsActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" label="VisitInfo" name="com.incube.invan.ui.SDVisitInfo.SD.VisitInformaitionActivity" screenOrientation="1"/>
+    <activity theme="MyMaterialTheme" name="com.incube.invan.ui.ExchangeRequest.ProcessExchangeRequestActivity"/>
+    <activity name="com.incube.invan.ui.ZainReports.ReportsActivity"/>
+    <activity name="com.incube.invan.ui.ZainReports.KitCodeReportDetailsActivity"/>
+    <activity name="com.incube.invan.ui.ZainReports.RechargeRequestAndBalanceReportActivity"/>
+    <activity name="com.incube.invan.ui.ZainReports.CommissionForTawasulActivity"/>
+    <activity theme="MyMaterialTheme" name="com.incube.invan.merchandising.SurveyEmployeeListActivity" screenOrientation="1" configChanges="0x4a0" windowSoftInputMode="0x2"/>
+    <activity name="com.incube.invan.ui.VisitTypeModule.VisitTypeActivity" windowSoftInputMode="0x22"/>
+    <activity name="com.incube.invan.payment.activities.MainCustomerListActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity name="com.incube.invan.ui.PriceProtectionActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity name="com.incube.invan.ui.ReturnContract.RejectedContractsActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity name="com.incube.invan.ui.CustomerStockCounting.CustomerStockCountingActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity name="com.incube.invan.ui.Sales.CoffeeMachineSalesSummaryActivity" screenOrientation="1" windowSoftInputMode="0x12"/>
+    <activity name="com.incube.invan.CameraScannerActivity" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.ui.Sales.SellingContainersActivity" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.Add_paymentWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.CommonSummaryActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.CreditNotePaymentWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.EmployeeKeyActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.ExchangeActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.FOCItemsActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.InvalidSerialsActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.ItemActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.NewOrderActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.OrderActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.OrderApprovalDetailsActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.OrdersApprovalActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.OrderSummaryActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.PaymentsActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.PromotedItemActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.PromotionActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.PromotionBatchesSelectionActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.ReasonActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.RejectedOrdersActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.RejectedOrdersDetailsActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.ReturnActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.SalesActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.SalesmanApprovalActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.SalesSummaryActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.SerialsActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.SummaryActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.TransactionActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <activity name="com.incube.invan.FlowWithStockStatus.activities.VanStockActivityWithStockStatus" screenOrientation="1" windowSoftInputMode="0x3"/>
+    <service name="com.incube.invan.services.GeneralJobScheduler" permission="android.permission.BIND_JOB_SERVICE"/>
+    <receiver label="RestartServiceWhenStopped" icon="res/drawable/logo_sonic_new.png" name="com.incube.invan.services.BackgroundServicesReceiver" enabled="true">
+      <intent-filter>
+        <action name="android.intent.action.BOOT_COMPLETED"/>
+      </intent-filter>
+    </receiver>
+    <meta-data name="com.google.android.gms.version" value="12451000"/>
+    <meta-data name="com.google.android.geo.API_KEY" value="AIzaSyAP0p8krcCPRNsW1_-VCyhabhnlmdN8zLk"/>
+    <activity label="خريطة" name="com.incube.invan.ui.Maps.MapsActivity"/>
+    <activity theme="Theme.Translucent.NoTitleBar" name="com.google.firebase.auth.internal.FederatedSignInActivity" permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN" exported="true" excludeFromRecents="true" launchMode="2"/>
+    <service name="com.google.firebase.components.ComponentDiscoveryService" exported="false" directBootAware="true">
+      <meta-data name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" value="com.google.firebase.components.ComponentRegistrar"/>
+      <meta-data name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" value="com.google.firebase.components.ComponentRegistrar"/>
+      <meta-data name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" value="com.google.firebase.components.ComponentRegistrar"/>
+      <meta-data name="com.google.firebase.components:com.google.firebase.iid.Registrar" value="com.google.firebase.components.ComponentRegistrar"/>
+      <meta-data name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" value="com.google.firebase.components.ComponentRegistrar"/>
+      <meta-data name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" value="com.google.firebase.components.ComponentRegistrar"/>
+    </service>
+    <service name="com.google.firebase.messaging.FirebaseMessagingService" exported="false">
+      <intent-filter priority="-500">
+        <action name="com.google.firebase.MESSAGING_EVENT"/>
+      </intent-filter>
+    </service>
+    <activity theme="zxing_CaptureTheme" name="com.journeyapps.barcodescanner.CaptureActivity" clearTaskOnLaunch="true" stateNotNeeded="true" screenOrientation="6" windowSoftInputMode="0x3"/>
+    <receiver name="com.google.firebase.iid.FirebaseInstanceIdReceiver" permission="com.google.android.c2dm.permission.SEND" exported="true">
+      <intent-filter>
+        <action name="com.google.android.c2dm.intent.RECEIVE"/>
+      </intent-filter>
+    </receiver>
+    <activity theme="Theme.Translucent.NoTitleBar" name="com.google.android.gms.common.api.GoogleApiActivity" exported="false"/>
+    <provider name="com.google.firebase.provider.FirebaseInitProvider" exported="false" authorities="com.alyoom.invan.firebaseinitprovider" initOrder="100"/>
+    <receiver name="com.google.android.gms.measurement.AppMeasurementReceiver" enabled="true" exported="false"/>
+    <receiver name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" permission="android.permission.INSTALL_PACKAGES" enabled="true" exported="true">
+      <intent-filter>
+        <action name="com.android.vending.INSTALL_REFERRER"/>
+      </intent-filter>
+    </receiver>
+    <service name="com.google.android.gms.measurement.AppMeasurementService" enabled="true" exported="false"/>
+    <service name="com.google.android.gms.measurement.AppMeasurementJobService" permission="android.permission.BIND_JOB_SERVICE" enabled="true" exported="false"/>
+    <service name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" exported="false">
+      <meta-data name="backend:com.google.android.datatransport.cct.CctBackendFactory" value="cct"/>
+    </service>
+    <service name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" permission="android.permission.BIND_JOB_SERVICE" exported="false"/>
+    <receiver name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" exported="false"/>
+  </application>
+</manifest>
